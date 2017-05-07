@@ -1,0 +1,32 @@
+<!--
+  Generated template for the Chat page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>chat</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding style="background:#dcdcdc">
+  <ion-list no-lines>
+   <ion-item *ngFor="let item of messages1" style="background:#dcdcdc">
+
+   <!-- <h2>{{item.name}}</h2>-->
+    <div style="background:white;padding-top:5px;padding-bottom:5px;padding-left:5px; border-radius:15px;">
+      <span style="font-size:11px">{{item.text}}</span>
+    <p style="font-size:8px">{{item.translate}}</p>
+   </div>
+
+    <ion-avatar item-right>
+      <img src="{{item.avatar}}">
+       <span style="font-size:8px;">{{item.name}}</span>
+    </ion-avatar>
+  </ion-item>
+</ion-list>
+</ion-content>
