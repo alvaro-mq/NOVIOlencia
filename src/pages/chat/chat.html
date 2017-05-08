@@ -15,18 +15,39 @@
 
 <ion-content padding style="background:#dcdcdc">
   <ion-list no-lines>
-   <ion-item *ngFor="let item of messages1" style="background:#dcdcdc">
+   <ion-item *ngFor="let item of messages1; let i=index" style="background:#dcdcdc;margin-top:1px;padding-top:1px;">
 
    <!-- <h2>{{item.name}}</h2>-->
-    <div style="background:white;padding-top:5px;padding-bottom:5px;padding-left:5px; border-radius:15px;">
+    <div style="background:white;padding-top:5px;padding-bottom:5px;padding-left:5px; border-radius:10px;">
       <span style="font-size:11px">{{item.text}}</span>
     <p style="font-size:8px">{{item.translate}}</p>
    </div>
 
-    <ion-avatar item-right>
+    <ion-avatar item-right center *ngIf="i%2!=0">
+      <img src="{{item.avatar}}">
+       <span style="font-size:8px;">{{item.name}}</span>
+    </ion-avatar>
+    <ion-avatar item-left center *ngIf="i%2==0">
       <img src="{{item.avatar}}">
        <span style="font-size:8px;">{{item.name}}</span>
     </ion-avatar>
   </ion-item>
+
 </ion-list>
 </ion-content>
+<ion-footer>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col col-10>
+        <ion-input type="text" value="" style="background:white; border-radius:10px;"></ion-input>
+      </ion-col>
+      <ion-col col-2>
+         <button ion-button round icon-only>
+          <ion-icon ios="ios-send" md="md-send"></ion-icon>
+         </button>
+      </ion-col>
+
+    </ion-row>
+</ion-grid>
+</ion-footer>
