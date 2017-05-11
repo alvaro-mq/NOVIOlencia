@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { Chat } from '../chat/chat';
+import { Resultados } from '../resultados/resultados';
 
 @Component({
   selector: 'page-home',
@@ -13,6 +14,10 @@ export class HomePage {
   }
   irChat(){
     this.navCtrl.push(Chat);
+  }
+
+  irScrollInfinit(){
+    this.navCtrl.push(Resultados);
   }
 
 }
